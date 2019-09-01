@@ -2,11 +2,11 @@ const $root = document.querySelector("#root");
 
 //Cria a tag article
 const $memoryCard = document.createElement("article");
-const $memoryCardJs = document.createElement("article");
+const $memoryCardFront = document.createElement("article");
 
 /*Coloca toda a tag img dentro da variavel em formato de string, 
 com template string*/
-const $icon = `
+const $iconCollab = `
     <img 
       class='icon' 
       src='img/icon-collabcode.png' 
@@ -16,19 +16,18 @@ const $icon = `
 
 const $iconJavaScript = `
     <img 
-      class='icon -style'
+      class='icon'
       src='img/-icon-js.png' 
-      alt='Ícone JavaScript' 
+      alt='Ícone de um livro da linguagem JavaScript' 
     />
   `;
 
 $memoryCard.classList.add("memory-card");
-$memoryCardJs.classList.add("memory-card", "-js");
+$root.insertBefore($memoryCard, null); //Insere a tag article dentro da div(root)
 
-//Insere a tag article dentro da div(root)
-$root.insertBefore($memoryCard, null);
-$root.insertBefore($memoryCardJs, $memoryCard);
+$memoryCardFront.classList.add("memory-card", "-front");
+$root.insertBefore($memoryCardFront, $memoryCard); //Insere a tag article dentro da div(root)
 
 /*Insere o ícone dentro da tag article*/
-$memoryCard.insertAdjacentHTML("afterbegin", $icon);
-$memoryCardJs.insertAdjacentHTML("afterbegin", $iconJavaScript);
+$memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
+$memoryCardFront.insertAdjacentHTML("afterbegin", $iconJavaScript);

@@ -16,11 +16,11 @@
   height: 100px;
 }
 
-.memory-card.-js {
+.memory-card.-front {
   background-color: #fff;
 }
 
-.memory-card.-js::before {
+.memory-card.-front::before {
   content: "";
   background-color: #d4d4d4;
   width: 95px;
@@ -29,8 +29,7 @@
   position: absolute;
 }
 
-.memory-card .-style {
-  z-index: 2;
+.memory-card.-front > .icon {
   position: absolute;
-  top: 18px;
+  transform: translateY(-12px);
 }

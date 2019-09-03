@@ -17,6 +17,10 @@ com template string*/
 
   /*Insere o ícone dentro da tag article*/
   $memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
+
+  $memoryCard.addEventListener("click", () => {
+    console.log("Cliquei no cartão frente");
+  });
 }
 
 function createMemoryCardFront() {
@@ -37,4 +41,8 @@ com template string*/
   $wrapCards.insertBefore($memoryCardFront, null); //Insere a tag article dentro da div(root)
   /*Insere o ícone dentro da tag article*/
   $memoryCardFront.insertAdjacentHTML("afterbegin", $iconJavaScript);
+
+  $memoryCardFront.addEventListener("click", () => {
+    console.log("Cliquei no cartão verso");
+  });
 }

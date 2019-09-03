@@ -1,7 +1,4 @@
-function createMemoryCard() {
-  /*Coloca toda a tag dentro da variavel em formato de string, 
-com template string*/
-  const $memoryCard = `
+const createMemoryCard = () => `
     <article  class="memory-card">
       <img 
         class='icon' 
@@ -12,13 +9,7 @@ com template string*/
     </article>
   `;
 
-  return $memoryCard;
-}
-
-function createMemoryCardFront() {
-  /*Coloca toda a tag dentro da variavel em formato de string, 
-com template string*/
-  const $memoryCardFront = `
+const createMemoryCardFront = () => `
     <article class="memory-card -front">
       <img 
         class='icon'
@@ -28,8 +19,6 @@ com template string*/
       />      
     </article>
   `;
-  return $memoryCardFront;
-}
 
 function handleClick() {
   console.log("Clicado");

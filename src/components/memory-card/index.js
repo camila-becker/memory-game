@@ -1,48 +1,36 @@
 function createMemoryCard() {
-  //Cria a tag article
-  const $memoryCard = document.createElement("article");
-
-  /*Coloca toda a tag img dentro da variavel em formato de string, 
+  /*Coloca toda a tag dentro da variavel em formato de string, 
 com template string*/
-  const $iconCollab = `
-    <img 
-      class='icon' 
-      src='img/icon-collabcode.png' 
-      alt='Gueio Mascote da CollabCode'
-    />
+  const $memoryCard = `
+    <article  class="memory-card">
+      <img 
+        class='icon' 
+        src='img/icon-collabcode.png' 
+        alt='Gueio Mascote da CollabCode'
+        onClick = "handleClick()"
+      />
+    </article>
   `;
 
-  $memoryCard.classList.add("memory-card");
-  $wrapCards.insertBefore($memoryCard, null); //Insere a tag article dentro da div(root)
-
-  /*Insere o ícone dentro da tag article*/
-  $memoryCard.insertAdjacentHTML("afterbegin", $iconCollab);
-
-  $memoryCard.addEventListener("click", () => {
-    console.log("Cliquei no cartão frente");
-  });
+  return $memoryCard;
 }
 
 function createMemoryCardFront() {
-  //Cria a tag article
-  const $memoryCardFront = document.createElement("article");
-
-  /*Coloca toda a tag img dentro da variavel em formato de string, 
+  /*Coloca toda a tag dentro da variavel em formato de string, 
 com template string*/
-  const $iconJavaScript = `
-    <img 
-      class='icon'
-      src='img/-icon-js.png' 
-      alt='Ícone de um livro da linguagem JavaScript' 
-    />
+  const $memoryCardFront = `
+    <article class="memory-card -front">
+      <img 
+        class='icon'
+        src='img/-icon-js.png' 
+        alt='Ícone de um livro da linguagem JavaScript' 
+        onClick="handleClick()"
+      />      
+    </article>
   `;
+  return $memoryCardFront;
+}
 
-  $memoryCardFront.classList.add("memory-card", "-front");
-  $wrapCards.insertBefore($memoryCardFront, null); //Insere a tag article dentro da div(root)
-  /*Insere o ícone dentro da tag article*/
-  $memoryCardFront.insertAdjacentHTML("afterbegin", $iconJavaScript);
-
-  $memoryCardFront.addEventListener("click", () => {
-    console.log("Cliquei no cartão verso");
-  });
+function handleClick() {
+  console.log("Clicado");
 }

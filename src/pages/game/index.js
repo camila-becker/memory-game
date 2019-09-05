@@ -1,45 +1,35 @@
 const $root = document.querySelector("#root");
 
-const memoryCard = {
+const $cardsWrapper = createCardsWrapper();
+
+const $memoryCard = createMemoryCard({
   src: "img/icon-collabcode.png",
   alt: "Gueio mascote da CollabCode"
-};
+});
 
-const cardJS = {
+const $cardJS = createMemoryCard({
   nameClass: "-front",
-  src: "img/-icon-js.png",
+  src: "img/icon-js.png",
   alt: "Ícone de um livro JavaScript"
-};
+});
 
-const cardWoman = {
+const $cardWoman = createMemoryCard({
   nameClass: "-front",
   src: "img/icon-woman.png",
   alt: "Ícone de uma mulher programando"
-};
+});
 
-const cardResponsive = {
+const $cardResponsive = createMemoryCard({
   nameClass: "-front",
   src: "img/icon-responsivo.png",
   alt: "Ícone sobre Layout Responsivo"
-};
+});
 
-const cardPHP = {
+const $cardPHP = createMemoryCard({
   nameClass: "-front",
   src: "img/icon-php.png",
   alt: "Ícone de um livro PHP"
-};
-
-const $cardsWrapper = createCardsWrapper();
-
-const $memoryCard = createMemoryCard(memoryCard);
-
-const $cardJS = createMemoryCard(cardJS);
-
-const $cardWoman = createMemoryCard(cardWoman);
-
-const $cardResponsive = createMemoryCard(cardResponsive);
-
-const $cardPHP = createMemoryCard(cardPHP);
+});
 
 $cardsWrapper.insertAdjacentHTML("beforeend", $cardWoman);
 $cardsWrapper.insertAdjacentHTML("beforeend", $cardWoman);

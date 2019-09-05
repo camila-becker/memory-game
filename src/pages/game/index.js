@@ -2,7 +2,7 @@ const $root = document.querySelector("#root");
 
 const $cardsWrapper = createCardsWrapper();
 
-const $styleMemoryCard = styleMemoryCard();
+const createMemoryCard = memoryCard();
 
 const $memoryCard = createMemoryCard({
   src: "img/icon-collabcode.png",

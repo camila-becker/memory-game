@@ -1,18 +1,7 @@
-const $head = document.querySelector("head");
-const $style = document.createElement("style");
+function memoryCard() {
+  const $head = document.querySelector("head");
+  const $style = document.createElement("style");
 
-const createMemoryCard = ({ nameClass, src, alt }, style) => `
-  <article class="memory-card ${nameClass}">
-    <img 
-      class="icon" 
-      src="${src}" 
-      alt="${alt}"
-      onClick = "handleClick()"
-    />
-  </article>
-`;
-
-const styleMemoryCard = () => {
   $style.textContent = `
     .memory-card {
       background-color: #f25a70;
@@ -50,8 +39,19 @@ const styleMemoryCard = () => {
       transform: translateY(-12px);
    }
  `;
-};
 
-$head.insertBefore($style, null);
+  $head.insertBefore($style, null);
+
+  return ({ nameClass, src, alt }) => `
+    <article class="memory-card ${nameClass}">
+        <img 
+          class="icon" 
+          src="${src}" 
+          alt="${alt}"
+          onClick = "handleClick()"
+        />
+    </article>
+  `;
+}
 
 const handleClick = () => console.log("Clicado");

@@ -26,11 +26,13 @@ function memoryCard() {
    }
 
 
-    .memory-card.-active .card{
+    .memory-card.-active .card,
+    .memory-card.-score .card{
       display: none;
     }
 
-    .memory-card.-active .card.-front{
+    .memory-card.-active .card.-front,
+    .memory-card.-score .card.-front{
       display: flex;
     }
 
@@ -94,18 +96,22 @@ const handleClick = $component => {
         $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
       ) {
         score++;
-        console.log("Valor do Score: ", score);
-      }
-
-      setTimeout(() => {
-        const $activeMemoryCards = document.querySelectorAll(
-          ".memory-card.-active"
-        );
-        $activeMemoryCards.forEach($memoryCard => {
+        console.log("Pontos", score);
+        $memoryCards.forEach($memoryCard => {
+          $memoryCard.classList.add("-score");
           $memoryCard.classList.remove("-active");
         });
-        qtdActiveMemoryCard = 0;
-      }, 1500);
+      } else {
+        setTimeout(() => {
+          const $activeMemoryCards = document.querySelectorAll(
+            ".memory-card.-active"
+          );
+          $activeMemoryCards.forEach($memoryCard => {
+            $memoryCard.classList.remove("-active");
+          });
+          qtdActiveMemoryCard = 0;
+        }, 1500);
+      }
     }
   }
 };

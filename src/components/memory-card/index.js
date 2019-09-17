@@ -1,8 +1,11 @@
-function memoryCard() {
-  const $head = document.querySelector("head");
-  const $style = document.createElement("style");
+const memoryCard = (function() {
+  const module = {};
 
-  $style.textContent = `
+  module.create = () => {
+    const $head = document.querySelector("head");
+    const $style = document.createElement("style");
+
+    $style.textContent = `
 
     .memory-card{
       width: 155px;
@@ -58,10 +61,10 @@ function memoryCard() {
    }
  `;
 
-  $head.insertBefore($style, null);
+    $head.insertBefore($style, null);
 
-  return ({ nameClass, src, alt }) => `
-    <div class="memory-card" onClick="handleClick(this)">  
+    return ({ nameClass, src, alt }) => `
+    <div class="memory-card" onClick="memoryCard.handleClick(this)">  
       <article class="card -front">
           <img 
             class="icon" 
@@ -78,45 +81,50 @@ function memoryCard() {
       </article>
     </div>      
   `;
-}
+  };
 
-const handleClick = $component => {
-  if (!$component.classList.contains("-active")) {
-    activeMemoryCard($component);
-    verify();
-  }
-};
+  module.handleClick = $component => {
+    if (!$component.classList.contains("-active")) {
+      module._activeMemoryCard($component);
+      module._verify();
+    }
+  };
 
-function activeMemoryCard($component) {
-  if (store.qtdActiveMemoryCard < 2) {
-    $component.classList.add("-active");
-  }
-}
+  module._activeMemoryCard = $component => {
+    if (store.qtdActiveMemoryCard < 2) {
+      $component.classList.add("-active");
+    }
+  };
 
-function verify() {
-  if (store.qtdActiveMemoryCard == 1) {
-    const $activeMemoryCards = document.querySelectorAll(
-      ".memory-card.-active"
-    );
-    if (
-      $activeMemoryCards[0]
-        .querySelector(".-front .icon")
-        .getAttribute("src") ==
-      $activeMemoryCards[1].querySelector(".-front .icon").getAttribute("src")
-    ) {
-      store.score++;
-      console.log("Pontos", store.score);
-      $activeMemoryCards.forEach($memoryCard => {
-        $memoryCard.classList.add("-score");
-        $memoryCard.classList.remove("-active");
-      });
-    } else {
-      setTimeout(() => {
+  module._verify = () => {
+    if (store.qtdActiveMemoryCard == 1) {
+      const $activeMemoryCards = document.querySelectorAll(
+        ".memory-card.-active"
+      );
+      if (
+        $activeMemoryCards[0]
+          .querySelector(".-front .icon")
+          .getAttribute("src") ==
+        $activeMemoryCards[1].querySelector(".-front .icon").getAttribute("src")
+      ) {
+        store.score++;
+        console.log("Pontos", store.score);
         $activeMemoryCards.forEach($memoryCard => {
+          $memoryCard.classList.add("-score");
           $memoryCard.classList.remove("-active");
         });
-        store.qtdActiveMemoryCard = 0;
-      }, 1500);
+      } else {
+        setTimeout(() => {
+          $activeMemoryCards.forEach($memoryCard => {
+            $memoryCard.classList.remove("-active");
+          });
+          store.qtdActiveMemoryCard = 0;
+        }, 1500);
+      }
     }
-  }
-}
+  };
+  return {
+    create: module.create,
+    handleClick: module.handleClick
+  };
+})();

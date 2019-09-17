@@ -1,3 +1,5 @@
+let score = 0;
+
 function memoryCard() {
   const $head = document.querySelector("head");
   const $style = document.createElement("style");
@@ -79,19 +81,31 @@ function memoryCard() {
 }
 
 const handleClick = $component => {
-  if (qtdActiveMemoryCard < 2) {
-    $component.classList.toggle("-active");
-  }
+  if (!$component.classList.contains("-active")) {
+    if (qtdActiveMemoryCard < 2) {
+      $component.classList.toggle("-active");
+    }
 
-  if (qtdActiveMemoryCard == 1) {
-    setTimeout(() => {
-      const $activeMemoryCards = document.querySelectorAll(
-        ".memory-card.-active"
-      );
-      $activeMemoryCards.forEach($memoryCard => {
-        $memoryCard.classList.remove("-active");
-      });
-      qtdActiveMemoryCard = 0;
-    }, 1500);
+    if (qtdActiveMemoryCard == 1) {
+      const $memoryCards = document.querySelectorAll(".memory-card.-active");
+
+      if (
+        $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ==
+        $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
+      ) {
+        score++;
+        console.log("Valor do Score: ", score);
+      }
+
+      setTimeout(() => {
+        const $activeMemoryCards = document.querySelectorAll(
+          ".memory-card.-active"
+        );
+        $activeMemoryCards.forEach($memoryCard => {
+          $memoryCard.classList.remove("-active");
+        });
+        qtdActiveMemoryCard = 0;
+      }, 1500);
+    }
   }
 };

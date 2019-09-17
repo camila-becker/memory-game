@@ -23,8 +23,9 @@ function createCardsWrapper() {
   $head.insertBefore($style, null);
 
   $cardsWrapper.addEventListener("click", event => {
-    qtdActiveMemoryCard = $cardsWrapper.querySelectorAll(".memory-card.-active")
-      .length;
+    store.qtdActiveMemoryCard = $cardsWrapper.querySelectorAll(
+      ".memory-card.-active"
+    ).length;
   });
 
   return $cardsWrapper;

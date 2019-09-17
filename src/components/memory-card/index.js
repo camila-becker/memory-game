@@ -1,5 +1,3 @@
-let score = 0;
-
 function memoryCard() {
   const $head = document.querySelector("head");
   const $style = document.createElement("style");
@@ -85,27 +83,26 @@ function memoryCard() {
 const handleClick = $component => {
   if (!$component.classList.contains("-active")) {
     if (qtdActiveMemoryCard < 2) {
-      $component.classList.toggle("-active");
+      $component.classList.add("-active");
     }
-
     if (qtdActiveMemoryCard == 1) {
-      const $memoryCards = document.querySelectorAll(".memory-card.-active");
-
+      let $activeMemoryCards = document.querySelectorAll(
+        ".memory-card.-active"
+      );
       if (
-        $memoryCards[0].querySelector(".-front .icon").getAttribute("src") ==
-        $memoryCards[1].querySelector(".-front .icon").getAttribute("src")
+        $activeMemoryCards[0]
+          .querySelector(".-front .icon")
+          .getAttribute("src") ==
+        $activeMemoryCards[1].querySelector(".-front .icon").getAttribute("src")
       ) {
         score++;
         console.log("Pontos", score);
-        $memoryCards.forEach($memoryCard => {
+        $activeMemoryCards.forEach($memoryCard => {
           $memoryCard.classList.add("-score");
           $memoryCard.classList.remove("-active");
         });
       } else {
         setTimeout(() => {
-          const $activeMemoryCards = document.querySelectorAll(
-            ".memory-card.-active"
-          );
           $activeMemoryCards.forEach($memoryCard => {
             $memoryCard.classList.remove("-active");
           });

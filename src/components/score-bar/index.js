@@ -25,7 +25,6 @@ const scoreBar = (function() {
 
   module.create = () => {
     module._style();
-
     return `
       <header class="score-bar">
         <span class="counter">0</span>

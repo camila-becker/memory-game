@@ -18,14 +18,15 @@ const startButton = (function() {
         font-weight: bold;
         color: #fff;
         line-height: 70px;
+        cursor: pointer;
       }
     `;
-
     $head.insertBefore($style, null);
   };
 
   module.create = () => {
     module._style();
+
     return `
       <button class="start-button">Start</button>
     `;

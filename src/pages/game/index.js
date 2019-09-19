@@ -37,8 +37,8 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardPHP);
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardWoman);
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardJS);
+  $cardsWrapper.insertAdjacentHTML("beforeend", $startButton);
 
   $root.insertAdjacentHTML("afterbegin", $scoreBar);
-  $root.insertAdjacentHTML("afterend", $startButton);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
 })();

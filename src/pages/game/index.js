@@ -5,6 +5,10 @@
 
   const createMemoryCard = memoryCard.create();
 
+  const $scoreBar = scoreBar.create();
+
+  const $startButton = startButton.create();
+
   const $cardJS = createMemoryCard({
     src: "img/icon-js.png",
     alt: "Ícone de um livro JavaScript"
@@ -34,5 +38,7 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardWoman);
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardJS);
 
+  $root.insertAdjacentHTML("afterbegin", $scoreBar);
+  $root.insertAdjacentHTML("afterend", $startButton);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
 })();

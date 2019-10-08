@@ -15,16 +15,22 @@ const flatButton = (function() {
         color: #fffcee;
         text-transform: uppercase;
         line-height: 27px;
+        
+      }
+
+      .flat-button.-active{
+        background-color: #f25a70;
+        color: #fff;
       }
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.render = content => {
+  module.render = (content, active) => {
     module._style();
     return `
-      <button class="flat-button">${content}</button>
+      <button class="flat-button ${active}">${content}</button>
     `;
   };
 

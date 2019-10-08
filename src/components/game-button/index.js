@@ -17,7 +17,6 @@ const gameButton = (function() {
         bottom: 20px;
         transform: translateX(-50%);
         text-transform: uppercase;
-        font-family: "Manjari", sans-serif;
         font-size: 18px;
         font-weight: bold;
         color: #fffcee;

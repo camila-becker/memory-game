@@ -1,36 +1,34 @@
 const flatButton = (function() {
   const module = {};
 
-  module._style = () => {
+  module._id = 0;
+
+  module._style = active => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .flat-button{
-        background-color: #eae6da;
-        width: 186px;
+      .flat-button-${module._id}{
+        background-color: ${active ? "#f25a70" : "#eae6da"};
+        width: 189px;
         height: 176px;
         font-size: 24px;
         font-weight: bold;
-        color: #fffcee;
+        color: ${active ? "#fff" : "#fffcee"};
         text-transform: uppercase;
-        line-height: 27px;
-        
-      }
-
-      .flat-button.-active{
-        background-color: #f25a70;
-        color: #fff;
+        display: block;
+        float: left;
       }
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.render = (content, active) => {
-    module._style();
+  module.render = (content = "", active = false) => {
+    module._id++;
+    module._style(active);
     return `
-      <button class="flat-button ${active}">${content}</button>
+      <button class="flat-button-${module._id}">${content}</button>
     `;
   };
 

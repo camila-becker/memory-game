@@ -21,10 +21,10 @@ const flatButton = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = () => {
+  module.render = content => {
     module._style();
     return `
-      <button class="flat-button">Log in</button>
+      <button class="flat-button">${content}</button>
     `;
   };
 

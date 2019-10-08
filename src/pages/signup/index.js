@@ -3,4 +3,5 @@
   const $flatButton = flatButton.render();
 
   $root.insertAdjacentHTML("beforeend", $flatButton);
+  $root.insertAdjacentHTML("beforeend", $flatButton);
 })();

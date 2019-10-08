@@ -23,11 +23,14 @@ const gameButton = (function() {
         color: #fffcee;
         line-height: 85px;
         cursor: pointer;
-        transition: opacity 200ms linear;
+        transition: all 200ms linear;
+        
       }
 
       .game-button.-disable{
         opacity: 0;
+        transform: scale(2.5);
+        transform-origin: center;
       }
     `;
     $head.insertBefore($style, null);

@@ -28,11 +28,11 @@ const gameButton = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = () => {
+  module.render = content => {
     module._style();
 
     return `
-      <button class="game-button">Start</button>
+      <button class="game-button">${content}</button>
     `;
   };
   return {

@@ -7,7 +7,7 @@
 
   const $scoreBar = scoreBar.create();
 
-  const $gameButton = gameButton.render();
+  const $layerStart = layerStart.render();
 
   const $cardJS = createMemoryCard({
     src: "img/icon-js.png",
@@ -40,5 +40,5 @@
 
   $root.insertAdjacentHTML("afterbegin", $scoreBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
-  $root.insertAdjacentHTML("beforeend", $gameButton);
+  $root.insertAdjacentHTML("beforeend", $layerStart);
 })();

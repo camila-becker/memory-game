@@ -10,7 +10,7 @@ const flatButton = (function() {
     $style.textContent = `
       .flat-button-${module._id}{
         background-color: ${active ? "#f25a70" : "#eae6da"};
-        width: 189px;
+        width: 186px;
         height: 176px;
         font-size: 24px;
         font-weight: bold;
@@ -18,6 +18,7 @@ const flatButton = (function() {
         text-transform: uppercase;
         display: block;
         float: left;
+        padding-bottom: 35px;
       }
     `;
 

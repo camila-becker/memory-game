@@ -1,4 +1,4 @@
-const signupTitle = (function() {
+const titleCollabCode = (function() {
   const module = {};
 
   module._style = () => {
@@ -7,16 +7,11 @@ const signupTitle = (function() {
 
     $style.textContent = `
 
-      .signup-title{
+      .title-collabcode{
         font-size: 24px;
         color: #f25a70;
-        text-align: center;
         text-transform: uppercase;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%);
-        z-index: 5;
+        letter-spacing: 0.6px;
       }
     
     `;
@@ -27,7 +22,7 @@ const signupTitle = (function() {
   module.render = content => {
     module._style();
     return `    
-      <h1 class="signup-title">${content}</h1>
+      <h1 class="title-collabcode">${content}</h1>
     `;
   };
 

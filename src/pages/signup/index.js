@@ -2,11 +2,12 @@
   const $root = document.querySelector("#root");
   const $loginButton = flatButton.render("Log in");
   const $signupButton = flatButton.render("Sign Up", true);
-  const $signupTitle = signupTitle.render("Welcome!");
-  const $logoGueio = logoGueio.render();
+  const $logoCollabCode = logoCollabCode.render();
+  const $titleCollabCode = titleCollabCode.render("Welcome!");
+
+  const $logoWrapper = logoWrapper.render($logoCollabCode, $titleCollabCode);
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signupButton);
-  $root.insertAdjacentHTML("beforeend", $signupTitle);
-  $root.insertAdjacentHTML("beforeend", $logoGueio);
+  $root.insertAdjacentHTML("beforeend", $logoWrapper);
 })();

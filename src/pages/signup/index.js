@@ -5,10 +5,10 @@
   const $logoCollabCode = logoCollabCode.render();
   const $titleCollabCode = titleCollabCode.render("Welcome!");
   const $labelCollabCode = labelCollabCode.render("E-mail");
-  const $emailCollabCode = emailCollabCode.render("email");
+  const $inputCollabCode = inputCollabCode.render("email");
 
   const $logoWrapper = logoWrapper.render($logoCollabCode, $titleCollabCode);
-  const $formWrapper = formWrapper.render($labelCollabCode, $emailCollabCode);
+  const $formWrapper = formWrapper.render($labelCollabCode, $inputCollabCode);
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signupButton);

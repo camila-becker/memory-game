@@ -7,7 +7,7 @@ const formWrapper = (function() {
 
     $style.textContent = `
       .form-wrapper{
-        margin-left: 35px;
+        margin: 0 35px 0 35px;
       }
     `;
 

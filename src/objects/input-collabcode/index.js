@@ -1,16 +1,11 @@
-const emailCollabCode = (function() {
+const inputCollabCode = (function() {
   const module = {};
 
   module._email = () => {
     const email = "camila.becker01@gmail.com";
-    const regexp = new RegExp(/[@+]/i);
-    const validation = regexp.exec(email);
+    const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (validation == "@") {
-      console.log(true);
-    } else {
-      console.log(false);
-    }
+    console.log("Email: ", regex.test(email));
   };
 
   module._style = () => {
@@ -18,14 +13,13 @@ const emailCollabCode = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .email-collabcode{
+      .input-collabcode{
         font-size: 18px;
+        font-weight: bold;
         color: #3a4042;
-        width: 302px;
-        border: none;
+        width: 100%;
         border-bottom: 2px solid rgba(58, 64, 66,0.5);
-        padding-top: 10px;
-        padding-bottom: 8px;
+        padding: 12px 0 12px 0;
       }    
     `;
 
@@ -36,7 +30,7 @@ const emailCollabCode = (function() {
     module._email();
     module._style();
     return `  
-      <input class="email-collabcode" type=${content}>   
+      <input type=${content} class="input-collabcode"/>   
     `;
   };
 

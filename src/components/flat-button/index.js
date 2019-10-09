@@ -18,6 +18,7 @@ const flatButton = (function() {
         text-transform: uppercase;
         display: block;
         float: left;
+        padding-bottom: 35px;
       }
     `;
 

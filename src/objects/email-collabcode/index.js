@@ -1,6 +1,18 @@
 const emailCollabCode = (function() {
   const module = {};
 
+  module._email = () => {
+    const email = "camila.becker01@gmail.com";
+    const regexp = new RegExp(/[@+]/i);
+    const validation = regexp.exec(email);
+
+    if (validation == "@") {
+      console.log(true);
+    } else {
+      console.log(false);
+    }
+  };
+
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
@@ -30,6 +42,7 @@ const emailCollabCode = (function() {
   };
 
   module.render = (component, type) => {
+    module._email();
     module._style();
     return `  
       <label class="email-collabcode">

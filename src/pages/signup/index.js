@@ -4,11 +4,18 @@
   const $signupButton = flatButton.render("Sign Up", true);
   const $logoCollabCode = logoCollabCode.render();
   const $titleCollabCode = titleCollabCode.render("Welcome!");
-  const $labelCollabCode = labelCollabCode.render("E-mail");
-  const $inputCollabCode = inputCollabCode.render("email");
 
   const $logoWrapper = logoWrapper.render($logoCollabCode, $titleCollabCode);
-  const $formWrapper = formWrapper.render($labelCollabCode, $inputCollabCode);
+  const $formWrapper = formWrapper.render(
+    labelCollabCode.render("Username"),
+    inputCollabCode.render("text"),
+    labelCollabCode.render("E-mail"),
+    inputCollabCode.render("email"),
+    labelCollabCode.render("Password"),
+    inputCollabCode.render("password"),
+    labelCollabCode.render("Confirm Password"),
+    inputCollabCode.render("password")
+  );
 
   $root.insertAdjacentHTML("beforeend", $loginButton);
   $root.insertAdjacentHTML("beforeend", $signupButton);

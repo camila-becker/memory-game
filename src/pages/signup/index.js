@@ -14,7 +14,8 @@
     labelCollabCode.render("Password"),
     inputCollabCode.render("password"),
     labelCollabCode.render("Confirm Password"),
-    inputCollabCode.render("password")
+    inputCollabCode.render("password"),
+    buttonCollabCode.render("Submit")
   );
 
   $root.insertAdjacentHTML("beforeend", $loginButton);

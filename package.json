@@ -4,7 +4,7 @@
   "description": "Jogo da Memória",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
     "url": "https://github.com/camila-becker/memory-game/issues"
   },
   "homepage": "https://github.com/camila-becker/memory-game#readme",
-  "dependencies": {
-    "yup": "^0.27.0"
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
   }
 }

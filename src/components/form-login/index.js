@@ -26,9 +26,12 @@ const formLogin = (function() {
       placeholder: "********"
     });
 
-    const $textCollabCode = textCollabCode.render("Forgot password?");
+    const $linkCollabCode = linkCollabCode.render({
+      href: "#",
+      content: "Forgot password?"
+    });
 
-    const $btnLogin = btnCollabCode.render("Login");
+    const $btn = btnCollabCode.render("Login");
 
     return `
       ${$usernameOrEmailLabel}
@@ -37,9 +40,9 @@ const formLogin = (function() {
       ${$passwordLabel}
       ${$passwordInput}
 
-      ${$textCollabCode}
+      ${$linkCollabCode}
 
-      ${$btnLogin}   
+      ${$btn}   
     `;
   };
 

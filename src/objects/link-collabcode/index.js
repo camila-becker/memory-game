@@ -1,4 +1,4 @@
-const textCollabCode = (function() {
+const linkCollabCode = (function() {
   const module = {};
 
   module._style = () => {
@@ -6,22 +6,24 @@ const textCollabCode = (function() {
     const $style = document.createElement("style");
 
     $style.textContent = `
-      .text-collabcode{
+      .link-collabcode{
         font-size: 14px;
-        text-align: right;
+        text-decoration: none;
         color: rgba(58, 64, 66,0.7);
-        padding: 40px 0 110px;
+        display: block;
+        text-align: right;
+        margin: 40px 0 60px;
       }
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.render = content => {
+  module.render = ({ href = "", content = "" }) => {
     module._style();
 
     return `
-      <p class="text-collabcode">${content}</p>    
+      <a href="${href}" class="link-collabcode">${content}</a>    
     `;
   };
 

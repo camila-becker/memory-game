@@ -26,7 +26,7 @@ const inputCollabCode = (function() {
     $head.insertBefore($style, null);
   };
 
-  module.render = (content, placeholder) => {
+  module.render = (content, placeholder = "") => {
     module._email();
     module._style();
     return `  

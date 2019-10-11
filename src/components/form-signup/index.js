@@ -36,7 +36,10 @@ const formSignup = (function() {
       placeholder: "********"
     });
 
-    const $btnCollabCode = btnCollabCode.render("Submit");
+    const $btnCollabCode = btnCollabCode.render({
+      content: "Submit",
+      path: "login"
+    });
 
     return `
       ${$usernameLabel}

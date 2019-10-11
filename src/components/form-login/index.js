@@ -34,7 +34,10 @@ const formLogin = (function() {
 
     const $eyeCollabCode = eyeCollabCode.render({ attrFor: "password" });
 
-    const $btn = btnCollabCode.render("Login");
+    const $btn = btnCollabCode.render({
+      content: "Login",
+      path: "game"
+    });
 
     return `
       ${$usernameOrEmailLabel}

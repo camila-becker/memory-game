@@ -16,27 +16,33 @@ const flatButton = (function() {
         font-weight: bold;
         color: ${active ? "#fff" : "#fffcee"};
         text-transform: uppercase;
-        text-decoration: none;
-        text-align: center;
-        display: inline-block;
-        float: left;
+        display: inline-flex;
+        justify-content: center;
         padding-top:60px;
         box-sizing: border-box;
+        cursor: pointer;
       }
     `;
 
     $head.insertBefore($style, null);
   };
 
-  module.render = (content = "", active = false) => {
+  module.handleClick = path => {
+    window.location.hash = `#/${path}`;
+  };
+
+  module.render = (content = "", active = false, path = "") => {
     module._id++;
     module._style(active);
     return `
-      <a href="" class="flat-button-${module._id}">${content}</a>
+      <button 
+         class="flat-button-${module._id}"
+         onclick="flatButton.handleClick('${path}')">${content}</button>
     `;
   };
 
   return {
-    render: module.render
+    render: module.render,
+    handleClick: module.handleClick
   };
 })();

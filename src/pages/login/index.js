@@ -1,4 +1,4 @@
-const login = (function() {
+(function() {
   const $root = document.querySelector("#root");
   const $loginButton = flatButton.render("Log in", true);
   const $signupButton = flatButton.render("Sign Up");

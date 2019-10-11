@@ -31,6 +31,8 @@ const formLogin = (function() {
       content: "Forgot password?"
     });
 
+    const $eyeCollabCode = eyeCollabCode.render();
+
     const $btn = btnCollabCode.render("Login");
 
     return `
@@ -39,6 +41,8 @@ const formLogin = (function() {
 
       ${$passwordLabel}
       ${$passwordInput}
+
+      ${$eyeCollabCode}
 
       ${$linkCollabCode}
 

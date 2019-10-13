@@ -2,7 +2,7 @@ const flatButton = (function() {
   const module = {};
 
   module._id = 0;
-
+  
   module._style = active => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
@@ -18,7 +18,7 @@ const flatButton = (function() {
         text-transform: uppercase;
         display: inline-flex;
         justify-content: center;
-        padding-top:60px;
+        padding-top: 60px;
         box-sizing: border-box;
         cursor: pointer;
       }
@@ -36,9 +36,7 @@ const flatButton = (function() {
     module._id++;
     module._style(active);
     return `
-      <button 
-         class="flat-button-${module._id}"
-         onclick="flatButton.handleClick('${path}')">${content}</button>
+      <button class="flat-button-${module._id}" onclick="flatButton.handleClick('${path}')">${content}</button>
     `;
   };
 

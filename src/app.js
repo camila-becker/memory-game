@@ -1,11 +1,16 @@
 (function() {
   const {hash} = window.location;
   const paths = [];
-  paths["#/"] = error;
   paths[""] = login;
+  paths["#/404"] = status404;
   paths["#/login"] = login;
   paths["#/signup"] = signup;
   paths["#/game"] = game;
 
-  paths[hash]();
+  if (paths[hash] === undefined){
+    paths["#/404"]();
+  }else{
+    paths[hash]();
+  }
+  
 })();

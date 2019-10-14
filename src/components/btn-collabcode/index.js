@@ -27,10 +27,49 @@ const btnCollabCode = (function() {
     $head.insertBefore($style, null);
   };
 
+  module._validateEmail = () => {
+    const $email = document.querySelector("input[id=email]").value;
+    const $invalid = document.querySelectorAll(".input-collabcode");
+    const regexEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if($email == 0 || !regexEmail.test($email)){
+      $invalid[0].classList.add("-invalid");
+      return false;
+    }else{
+      $invalid[0].classList.remove("-invalid");
+      $invalid[0].classList.add("-valid");
+      return true;
+    };
+  };
+
+  module._validatePassword = () => {
+    const $password = document.querySelector("input[id=password]").value;
+    const $invalid = document.querySelectorAll(".input-collabcode");
+    const regexPassword = /([a-zA-Z0-9]{8,})/;
+    
+    if(!regexPassword.test($password)){
+      $invalid[1].classList.add("-invalid");
+      return false;
+    }else{
+      $invalid[1].classList.remove("-invalid");
+      $invalid[1].classList.add("-valid");
+      return true;
+    };
+  };
+
   module.handleClick = (event, path) => {
     event.preventDefault()
-    location.hash = `#/${path}`;
-    location.reload(true);
+    if(path == "game"){
+      module._validateEmail();
+      module._validatePassword();
+      if(module._validateEmail() && module._validatePassword()){
+        location.hash = `#/${path}`;
+        location.reload(true);
+      };
+    }else{
+      location.hash = `#/${path}`;
+      location.reload(true);
+    }
   };
 
   module.render = ({content = "", path = ""}) => {

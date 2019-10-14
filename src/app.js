@@ -10,3 +10,7 @@
  paths[hash] ? paths[hash]() : paths["#/404"]();
   
 })();
+
+window.addEventListener("hashchange", event => {
+  location.reload();
+});

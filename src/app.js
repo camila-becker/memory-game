@@ -7,6 +7,6 @@
   paths["#/signup"] = signup;
   paths["#/game"] = game;
 
- paths[hash] === undefined ? paths["#/404"]() : paths[hash]();
+ paths[hash] ? paths[hash]() : paths["#/404"]();
   
 })();

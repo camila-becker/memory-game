@@ -10,13 +10,14 @@ const scoreBar = (function() {
         background-color: #3a4042;
         height: 40px;
         text-align: center;
-        font-family: "Manjari", sans-serif;
+        font-family: "Comfortaa", sans-serif;
       }
 
       .score-bar > .counter{
         color: #fff;
         line-height: 40px;
         font-weight: bold;
+        font-size: 16px;
       }
     `;
 

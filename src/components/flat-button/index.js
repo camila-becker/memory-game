@@ -28,7 +28,7 @@ const flatButton = (function() {
   };
 
   module.handleClick = path => {
-    window.location.hash = `#/${path}`;
+    location.hash = `#/${path}`;
     location.reload(true);
   };
 
@@ -36,7 +36,9 @@ const flatButton = (function() {
     module._id++;
     module._style(active);
     return `
-      <button class="flat-button-${module._id}" onclick="flatButton.handleClick('${path}')">${content}</button>
+      <button 
+        class="flat-button-${module._id}" 
+        onclick="flatButton.handleClick('${path}')">${content}</button>
     `;
   };
 

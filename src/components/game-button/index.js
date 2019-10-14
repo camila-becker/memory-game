@@ -20,7 +20,7 @@ const gameButton = (function() {
         font-size: 18px;
         font-weight: bold;
         color: #fffcee;
-        line-height: 85px;
+        line-height: 80px;
         cursor: pointer;
         transition: opacity 200ms linear, transform 200ms linear;
         

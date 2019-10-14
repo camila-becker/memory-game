@@ -9,6 +9,8 @@ const game = (function() {
 
   const $layerStart = layerStart.render();
 
+  const $returnButton = returnButton.render("login");
+
   const $cardJS = createMemoryCard({
     src: "img/icon-js.png",
     alt: "Ícone de um livro JavaScript"
@@ -37,8 +39,9 @@ const game = (function() {
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardPHP);
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardWoman);
   $cardsWrapper.insertAdjacentHTML("beforeend", $cardJS);
-
+  
   $root.insertAdjacentHTML("afterbegin", $scoreBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
   $root.insertAdjacentHTML("beforeend", $layerStart);
+  $root.insertAdjacentHTML("beforeend", $returnButton);
 });
